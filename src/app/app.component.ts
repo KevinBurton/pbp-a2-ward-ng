@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  // [] means property binding component to DOM
+  // () means event binding DOM to component
+  title = 'Customer App';
+  name='Ward';
+  wardsColor='green';
+
+  changeSuitColor() {
+    this.wardsColor = this.wardsColor === 'green' ? 'red' : 'green';
+  }
 }
