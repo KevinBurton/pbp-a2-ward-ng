@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-
+import { Customer } from './customer';
 import { CustomerService } from './customer.service';
 
 @Component({
@@ -8,11 +8,16 @@ import { CustomerService } from './customer.service';
   styleUrls: ['./customers.component.css']
 })
 export class CustomersComponent implements OnInit {
-  customers: any;
+  customers: Customer[];
   constructor(private _customerService: CustomerService) { }
 
   ngOnInit() {
-    this.customers = this._customerService.getCustomers()
+    this._customerService.getCustomers()
+      .subscribe(
+        // it worked
+        (customers) => { this.customers = customers; },
+        // error
+        (err) => { console.log(err); }
+      );
   }
-
 }

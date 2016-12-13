@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-
+import { Customer } from './customer';
 @Component({
   selector: 'app-customer',
   templateUrl: './customer.component.html',
@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CustomerComponent implements OnInit {
   @Input()
-  customer: {id: number, name: string};
+  customer: Customer;
   constructor() { }
   customerColor = 'gray';
   ngOnInit() {
