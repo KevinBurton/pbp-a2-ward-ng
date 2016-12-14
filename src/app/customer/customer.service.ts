@@ -3,7 +3,7 @@ import { Http, Response } from '@angular/http'
 import { Observable }     from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-import { Customer } from './customer';
+import { Customer } from './';
 
 const URL_CUSTOMERS = 'app/customers.json'
 
